@@ -1,0 +1,5 @@
+ninja: Entering directory `D:\collage\ncnn android\ncnn_Android_blazeface-main\ncnn_Android_mediapipe_blazeface\app\.cxx\Debug\1v6a3y3q\armeabi-v7a'
+[1/4] Building CXX object CMakeFiles/blazefacencnn.dir/landmark.cpp.o
+[2/4] Building CXX object CMakeFiles/blazefacencnn.dir/face.cpp.o
+[3/4] Building CXX object CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o
+[4/4] Linking CXX shared library "D:\collage\ncnn android\ncnn_Android_blazeface-main\ncnn_Android_mediapipe_blazeface\app\build\intermediates\cxx\Debug\1v6a3y3q\obj\armeabi-v7a\libblazefacencnn.so"

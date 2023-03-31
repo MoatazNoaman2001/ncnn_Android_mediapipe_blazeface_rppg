@@ -1,0 +1,3 @@
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/.cxx/Debug/2b73r6e4/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/.cxx/Debug/2b73r6e4/arm64-v8a/CMakeFiles/blazefacencnn.dir
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/.cxx/Debug/2b73r6e4/arm64-v8a/CMakeFiles/edit_cache.dir

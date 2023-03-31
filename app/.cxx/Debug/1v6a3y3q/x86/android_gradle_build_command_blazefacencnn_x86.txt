@@ -1,0 +1,7 @@
+Executable : C:\Users\Mo3taz kayad\AppData\Local\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+D:\collage\ncnn android\ncnn_Android_blazeface-main\ncnn_Android_mediapipe_blazeface\app\.cxx\Debug\1v6a3y3q\x86
+blazefacencnn
+jvmArgs : 
+

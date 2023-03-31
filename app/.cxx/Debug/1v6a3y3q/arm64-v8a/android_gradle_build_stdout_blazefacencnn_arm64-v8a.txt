@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\collage\ncnn android\ncnn_Android_blazeface-main\ncnn_Android_mediapipe_blazeface\app\.cxx\Debug\1v6a3y3q\arm64-v8a'
+ninja: no work to do.

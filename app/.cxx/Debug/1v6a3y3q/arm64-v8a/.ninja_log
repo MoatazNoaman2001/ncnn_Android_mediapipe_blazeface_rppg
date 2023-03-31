@@ -1,0 +1,24 @@
+# ninja log v5
+42	1957	700364288	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	56311747d2153413
+1	1990	700364288	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	d1980a2ad0454430
+14	2226	700364288	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+29	2251	700364288	CMakeFiles/blazefacencnn.dir/landmark.cpp.o	95af79b6a97007c6
+2251	3787	700364290	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222
+15	2265	700447850	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+2266	4996	700447853	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222
+9	3386	700447939	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+3386	5655	700447941	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222
+16	2731	700514068	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+2731	5735	700514071	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222
+18	1905	700514113	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	d1980a2ad0454430
+7	1999	700514113	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+30	2045	700514113	CMakeFiles/blazefacencnn.dir/landmark.cpp.o	95af79b6a97007c6
+2045	3701	700514115	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222
+13	1292	700514166	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	d1980a2ad0454430
+23	1418	700514166	CMakeFiles/blazefacencnn.dir/landmark.cpp.o	95af79b6a97007c6
+4	1484	700514166	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+1485	3764	700514168	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222
+3	1386	700514222	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	d1980a2ad0454430
+20	1475	700514222	CMakeFiles/blazefacencnn.dir/landmark.cpp.o	95af79b6a97007c6
+11	1478	700514222	CMakeFiles/blazefacencnn.dir/face.cpp.o	7cc9d2bf094007c1
+1478	2898	700514223	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/1v6a3y3q/obj/arm64-v8a/libblazefacencnn.so	218f553ec2bac222

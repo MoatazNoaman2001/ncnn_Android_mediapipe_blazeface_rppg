@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "D:\\collage\\ncnn android\\ncnn_Android_blazeface-main\\ncnn_Android_mediapipe_blazeface\\app\\src\\main\\jni\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Mo3taz kayad\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "-C",
+      "D:\\collage\\ncnn android\\ncnn_Android_blazeface-main\\ncnn_Android_mediapipe_blazeface\\app\\.cxx\\Debug\\1v6a3y3q\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Mo3taz kayad\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-C",
+    "D:\\collage\\ncnn android\\ncnn_Android_blazeface-main\\ncnn_Android_mediapipe_blazeface\\app\\.cxx\\Debug\\1v6a3y3q\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "blazefacencnn-Debug-arm64-v8a": {
+      "buildCommandComponents": [
+        "C:\\Users\\Mo3taz kayad\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "D:\\collage\\ncnn android\\ncnn_Android_blazeface-main\\ncnn_Android_mediapipe_blazeface\\app\\.cxx\\Debug\\1v6a3y3q\\arm64-v8a",
+        "blazefacencnn"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "blazefacencnn",
+      "output": "D:\\collage\\ncnn android\\ncnn_Android_blazeface-main\\ncnn_Android_mediapipe_blazeface\\app\\build\\intermediates\\cxx\\Debug\\1v6a3y3q\\obj\\arm64-v8a\\libblazefacencnn.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

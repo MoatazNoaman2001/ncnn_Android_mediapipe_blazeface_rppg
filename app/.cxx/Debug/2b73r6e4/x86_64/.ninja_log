@@ -1,0 +1,16 @@
+# ninja log v5
+17	1411	701544530	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	3d0acb8724e5d2d3
+8	1606	701544530	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	21e95ebfb8bf24df
+1	1662	701544530	CMakeFiles/blazefacencnn.dir/face.cpp.o	9b6adc9b4ec7298e
+48	1521	701577877	CMakeFiles/blazefacencnn.dir/opencv.cpp.o	c72c9724516c8c44
+57	2137	701577877	CMakeFiles/blazefacencnn.dir/landmark.cpp.o	ad2b3212813996b5
+32	2230	701577877	CMakeFiles/blazefacencnn.dir/face.cpp.o	9b6adc9b4ec7298e
+30	2085	701582680	CMakeFiles/blazefacencnn.dir/opencv.cpp.o	c72c9724516c8c44
+41	2465	701582681	CMakeFiles/blazefacencnn.dir/RPPG.cpp.o	b82452399f649ddd
+18	2543	701582681	CMakeFiles/blazefacencnn.dir/face.cpp.o	9b6adc9b4ec7298e
+54	2623	701582681	CMakeFiles/blazefacencnn.dir/landmark.cpp.o	ad2b3212813996b5
+13	1566	701585048	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	21e95ebfb8bf24df
+1566	2786	701585049	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/2b73r6e4/obj/x86_64/libblazefacencnn.so	eea5113663893455
+38	1339	701626650	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	3d0acb8724e5d2d3
+29	1829	701626651	CMakeFiles/blazefacencnn.dir/RPPG.cpp.o	b82452399f649ddd
+21	1964	701626651	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	21e95ebfb8bf24df
