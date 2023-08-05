@@ -39,6 +39,8 @@ public:
     void assignArea(int &width, int &height);
 
     double getMeanBpm();
+    Mat1d s_f_return();
+    void invalidateFace();
     void exit(JNIEnv *jenv);
 
     typedef vector<Point2f> Contour2f;
@@ -48,7 +50,6 @@ private:
     void extractSignal_pca();
     void extractSignal_xminay();
     void estimateHeartrate(Mat &rgb);
-    void invalidateFace();
     void log();
 
     void callback(int64_t now, double meanBpm, double minBpm, double maxBpm);   // Callback to Java

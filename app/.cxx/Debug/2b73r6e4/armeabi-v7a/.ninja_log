@@ -14,3 +14,9 @@
 26	1300	701626646	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	eb6857488beb0327
 18	1619	701626646	CMakeFiles/blazefacencnn.dir/RPPG.cpp.o	437ffdbe6373497b
 4	1786	701626646	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c5ad4d86bca1be36
+28	2324	704893871	CMakeFiles/blazefacencnn.dir/RPPG.cpp.o	437ffdbe6373497b
+7	2434	704893871	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c5ad4d86bca1be36
+4	1752	704894454	CMakeFiles/blazefacencnn.dir/face.cpp.o	d1d2850b47c3eb40
+1752	3550	704894456	D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/build/intermediates/cxx/Debug/2b73r6e4/obj/armeabi-v7a/libblazefacencnn.so	8b42056ac4c57828
+6	2379	710106516	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c5ad4d86bca1be36
+27	2382	710106516	CMakeFiles/blazefacencnn.dir/RPPG.cpp.o	437ffdbe6373497b

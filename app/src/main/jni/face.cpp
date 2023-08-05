@@ -3137,6 +3137,26 @@ double getLuma(Mat &luma, Mat &mask) {
     return cv::mean(luma, mask).val[0];
 }
 
+void getSkin(Mat &frame, Mat &hsv , Mat &ycbcr , Mat &globalMask){
+    cv::cvtColor(frame, hsv, cv::COLOR_BGR2HSV);
+    cv::inRange(hsv, cv::Scalar(0, 15, 0), cv::Scalar(17, 170, 255), hsv);
+    cv::morphologyEx(hsv, hsv, cv::MORPH_OPEN, cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3)));
+
+    cv::cvtColor(frame, ycbcr, cv::COLOR_BGR2YCrCb);
+    cv::inRange(ycbcr, cv::Scalar(0, 135, 85), cv::Scalar(255, 180, 135), ycbcr);
+    cv::morphologyEx(ycbcr, ycbcr, cv::MORPH_OPEN, cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3)));
+
+    cv::bitwise_and(ycbcr, hsv, globalMask);
+    cv::medianBlur(globalMask, globalMask, 3);
+    cv::morphologyEx(globalMask, globalMask, cv::MORPH_OPEN, cv::getStructuringElement(cv::MORPH_RECT, cv::Size(4, 4)));
+
+    cv::Size size = frame.size();
+
+    cv::bitwise_not(hsv, hsv);
+    cv::bitwise_not(ycbcr, ycbcr);
+    cv::bitwise_not(globalMask, globalMask);
+}
+
 int Face::draw(cv::Mat &rgb, const std::vector<Object> &objects) {
     for (int i = 0; i < objects.size(); i++) {
         objects[i].trans_image.copyTo(rgb(cv::Rect(0, 0, 192, 192)));
@@ -3163,17 +3183,42 @@ int Face::draw(cv::Mat &rgb, const std::vector<Object> &objects) {
         contours.push_back(points);
         cv::fillPoly(mask, contours, cv::Scalar(255));
 
+        //luma calc
         cv::Mat gray, luma;
+        cv::Scalar mean, dev;
         cv::cvtColor(rgb, gray, COLOR_RGB2GRAY);
         cv::cvtColor(rgb, luma, COLOR_RGB2Lab);
-        double luma_val = getLuma(luma, mask);
+        double luma_val = getLuma(luma , mask);
         std::string luma_str = "luma: " + std::to_string(round(luma_val * 100.0) / 100);
 
+        //variance in luma calc
+        if(l_arr.rows > 2 * 20)
+            l_arr = l_arr.rowRange(1 , l_arr.rows);
+        l_arr.push_back(luma_val);
+        cv::meanStdDev(l_arr ,mean , dev);
+        double veriance = sqrt(dev[0]);
+        std::string veriance_str = "ver: " + std::to_string(round(veriance * 100.0) / 100);
 
-        cv::putText(rgb, luma_str,
-                    cv::Point(objects[i].fore_head[objects[i].fore_head.size() - 3].x,
+
+        cv::putText(rgb, luma_str,cv::Point(objects[i].fore_head[objects[i].fore_head.size() - 3].x,
                               objects[i].fore_head[objects[i].fore_head.size() - 3].y - 40),
                     FONT_HERSHEY_PLAIN, 2, cv::Scalar(255));
+        cv::putText(rgb, veriance_str,cv::Point(objects[i].fore_head[objects[i].fore_head.size() - 3].x,
+                                            objects[i].fore_head[objects[i].fore_head.size() - 3].y - 60),
+                    FONT_HERSHEY_PLAIN, 2, cv::Scalar(255));
+
+
+        cv::Mat hsv, ycbcr, globalMask;
+        getSkin(rgb , hsv , ycbcr , globalMask);
+        Mat skin_forehead;
+        cv::bitwise_and(rgb , rgb , skin_forehead , mask);
+        int nonZero = cv::countNonZero(globalMask);
+
+        if(veriance > 1.7)
+            rppg.invalidateFace();
+        else if(nonZero < skin_forehead.size().area() / 5)
+            rppg.invalidateFace();
+
         long pixels_count = 0;
         for (int l = 0; l < mask.cols; l++) {
             for (int m = 0; m < mask.rows; m++) {
@@ -3187,15 +3232,35 @@ int Face::draw(cv::Mat &rgb, const std::vector<Object> &objects) {
                     FONT_HERSHEY_PLAIN, 2, cv::Scalar(255));
 
 
-        rppg.processFrameWithNoFD(rgb, gray, mask,
-                                  (cv::getCPUTickCount() * 1000) / cv::getTickFrequency(), luma_val,
-                                  pixels_count * 1.0);
+        rppg.processFrameWithNoFD(rgb, gray, mask,(cv::getCPUTickCount() * 1000) / cv::getTickFrequency(), luma_val,pixels_count * 1.0);
 
 
         string bpm_txt = "bpm: " + to_string(rppg.getMeanBpm());
         putText(rgb, bpm_txt,  cv::Point(objects[i].fore_head[objects[i].fore_head.size() - 3].x,
                                          objects[i].fore_head[objects[i].fore_head.size() - 3].y - 80), FONT_HERSHEY_PLAIN,
                 2, cv::Scalar(255 , 0 , 0), 2);
+
+        // Draw signal
+        double vmin, vmax;
+        Point pmin, pmax;
+        minMaxLoc(rppg.s_f_return(), &vmin, &vmax, &pmin, &pmax);
+        if(vmin != 0 && vmax != 0) {
+            double heightMult = objects[i].rect.y - 100/ (vmax - vmin);
+            double widthMult = objects[i].rect.x / (rppg.s_f_return().rows - 1);
+            double drawAreaTlX = objects[i].fore_head[objects[i].fore_head.size() - 3].x-50;
+            double drawAreaTlY = objects[i].fore_head[objects[i].fore_head.size() - 3].y + 160;
+
+            Point p1(drawAreaTlX,
+                     drawAreaTlY + (vmax - rppg.s_f_return().at<double>(0, 0)) * heightMult);
+            Point p2;
+            for (int j = 1; j < rppg.s_f_return().rows; j++) {
+                p2 = Point(drawAreaTlX + j * widthMult,
+                           drawAreaTlY + (vmax - rppg.s_f_return().at<double>(j, 0)) * heightMult);
+                line(rgb, p1, p2, cv::Scalar(255, 0, 0), 2);
+                p1 = p2;
+            }
+        }
+
         rgb.setTo(cv::Scalar(0, 45, 155, 150), mask);
 
         for (int j = 0; j < 468; j++)
@@ -3256,7 +3321,18 @@ int Face::draw(cv::Mat &rgb, const std::vector<Object> &objects) {
 
 
     }
-
     return 0;
+}
+
+void CalcBP(double beats){
+    double ROB=18.5;
+    double ET = (364.5 - 1.23 * beats);
+    double BSA = 0.007184 * (pow(Wei, 0.425)) * (pow(Hei, 0.725));
+    double SV = (-6.6 + (0.25 * (ET - 35)) - (0.62 * Beats) + (40.4 * BSA) - (0.51 * Agg));
+    double PP = SV / ((0.013 * Wei - 0.007 * Agg - 0.004 * beats) + 1.307);
+    double MPP = Q * ROB;
+
+    double  sp = (MPP+3 / 2*PP)
+    double  DP = (MPP - PP / 3)
 }
 

@@ -58,6 +58,7 @@ private:
     float mean_vals[3];
     float norm_vals[3];
     RPPG rppg;
+    Mat1d l_arr;
     ncnn::UnlockedPoolAllocator blob_pool_allocator;
     ncnn::PoolAllocator workspace_pool_allocator;
 };

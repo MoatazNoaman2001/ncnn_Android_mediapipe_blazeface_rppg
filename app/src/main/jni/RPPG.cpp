@@ -619,3 +619,7 @@ void RPPG::assignArea(int &width, int &height) {
 double RPPG::getMeanBpm() {
     return meanBpm;
 }
+
+Mat1d RPPG::s_f_return() {
+    return s_f;
+}

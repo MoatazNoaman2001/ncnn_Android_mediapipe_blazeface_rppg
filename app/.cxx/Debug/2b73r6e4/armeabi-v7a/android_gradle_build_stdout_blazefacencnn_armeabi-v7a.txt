@@ -1,32 +1,35 @@
 ninja: Entering directory `D:\collage\ncnn android\ncnn_Android_blazeface-main\ncnn_Android_mediapipe_blazeface\app\.cxx\Debug\2b73r6e4\armeabi-v7a'
-[1/5] Building CXX object CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/ndkcamera.cpp:152:117: warning: format specifies type 'long' but the argument has type 'int64_t' (aka 'long long') [-Wformat]
-    __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "onCaptureSequenceCompleted %p %d %ld", session, sequenceId, frameNumber);
-                                                                                         ~~~                        ^~~~~~~~~~~
-                                                                                         %lld
-1 warning generated.
-[2/5] Building CXX object CMakeFiles/blazefacencnn.dir/face.cpp.o
+[1/2] Building CXX object CMakeFiles/blazefacencnn.dir/face.cpp.o
 FAILED: CMakeFiles/blazefacencnn.dir/face.cpp.o 
 C:\Users\MO3TAZ~1\AppData\Local\Android\Sdk\ndk\214~1.707\TOOLCH~1\llvm\prebuilt\WINDOW~1\bin\CLANG_~1.EXE --target=armv7-none-linux-androideabi24 --gcc-toolchain="C:/Users/Mo3taz kayad/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64" --sysroot="C:/Users/Mo3taz kayad/AppData/Local/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot"  -Dblazefacencnn_EXPORTS -isystem "D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/armeabi-v7a/include/ncnn" -isystem "D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/sdk/native/jni/include" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -fno-rtti -fno-exceptions -std=gnu++11 -MD -MT CMakeFiles/blazefacencnn.dir/face.cpp.o -MF CMakeFiles\blazefacencnn.dir\face.cpp.o.d -o CMakeFiles/blazefacencnn.dir/face.cpp.o -c "D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp"
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3231:26: warning: relational comparison result unused [-Wunused-comparison]
-        for(int l = 0; l < mask.cols , l++){
-                       ~~^~~~~~~~~~~
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3231:43: error: expected ';' in 'for' statement specifier
-        for(int l = 0; l < mask.cols , l++){
-                                          ^
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3232:31: warning: relational comparison result unused [-Wunused-comparison]
-            for(int m = 0 ; m < mask.rows , m++){
-                            ~~^~~~~~~~~~~
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3232:48: error: expected ';' in 'for' statement specifier
-            for(int m = 0 ; m < mask.rows , m++){
-                                               ^
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3233:22: error: use of undeclared identifier 'j'
-                mask[j][r][0] = 255;
-                     ^
-D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3233:25: error: use of undeclared identifier 'r'
-                mask[j][r][0] = 255;
-                        ^
-2 warnings and 4 errors generated.
-[3/5] Building CXX object CMakeFiles/blazefacencnn.dir/RPPG.cpp.o
-[4/5] Building CXX object CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3330:34: error: use of undeclared identifier 'Wei'
+    double BSA = 0.007184 * (pow(Wei, 0.425)) * (pow(Hei, 0.725));
+                                 ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3330:54: error: use of undeclared identifier 'Hei'
+    double BSA = 0.007184 * (pow(Wei, 0.425)) * (pow(Hei, 0.725));
+                                                     ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3331:54: error: use of undeclared identifier 'Beats'; did you mean 'beats'?
+    double SV = (-6.6 + (0.25 * (ET - 35)) - (0.62 * Beats) + (40.4 * BSA) - (0.51 * Agg));
+                                                     ^~~~~
+                                                     beats
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3327:20: note: 'beats' declared here
+void CalcBP(double beats){
+                   ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3331:86: error: use of undeclared identifier 'Agg'
+    double SV = (-6.6 + (0.25 * (ET - 35)) - (0.62 * Beats) + (40.4 * BSA) - (0.51 * Agg));
+                                                                                     ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3332:32: error: use of undeclared identifier 'Wei'
+    double PP = SV / ((0.013 * Wei - 0.007 * Agg - 0.004 * beats) + 1.307);
+                               ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3332:46: error: use of undeclared identifier 'Agg'
+    double PP = SV / ((0.013 * Wei - 0.007 * Agg - 0.004 * beats) + 1.307);
+                                             ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3333:18: error: use of undeclared identifier 'Q'
+    double MPP = Q * ROB;
+                 ^
+D:/collage/ncnn android/ncnn_Android_blazeface-main/ncnn_Android_mediapipe_blazeface/app/src/main/jni/face.cpp:3336:32: error: expected ';' at end of declaration
+    double  DP = (MPP - PP / 3)
+                               ^
+                               ;
+8 errors generated.
 ninja: build stopped: subcommand failed.
